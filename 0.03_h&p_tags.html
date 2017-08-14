@@ -2,17 +2,26 @@
 <html>
 <head>
 <style type="text/css">
-	blink {
-    -webkit-animation: 2s linear infinite condemed_blink_effect; // for android
-    animation: 2s linear infinite condemed_blink_effect;
+	.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {  
+  75% { opacity: 0; }
 }
 
 </style>
+<script type="text/javascript">
+	(function blink() { 
+  $('.blink_me').fadeOut(500).fadeIn(500, blink); 
+})();
+
+</script>
 	<title>Classroom Game</title>
 </head>
 <body>
 <h3>Scotland</h3>
-<p style = "blink">I lived in Scotland for a year when I was 6.</p>
+<p style class="blink_me">I lived in Scotland for a year when I was 6.</p>
 <h3>Sports</h3>
 <p>I love to watch golf and baseball and can't stand football.</p>
 <h3>Video Games</h3>
